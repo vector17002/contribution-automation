@@ -46,7 +46,7 @@ async function getSha(url) {
 
 // Schedule the job to run daily
 // const everyMinuteJob = new CronJob('* * * * *',  doContribution, null, true, 'UTC');
-const dailyJob = new CronJob('0 0 */12 * *',  doContribution, null, true, 'UTC');
+const dailyJob = new CronJob('0 0 */6 * *',  doContribution, null, true, 'UTC');
 // everyMinuteJob.start();
 dailyJob.start();
 
