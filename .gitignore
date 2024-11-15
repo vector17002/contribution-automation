@@ -1,0 +1,54 @@
+# Node modules
+/node_modules/
+
+# Logs
+*.log
+logs/
+pids/
+*.pid
+*.gz
+
+# Dependency directories
+node_modules/
+
+# Build directories
+/dist/
+/build/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*.local
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE or Editor settings
+.vscode/
+.idea/
+
+# npm package lock file (optional)
+package-lock.json
+yarn.lock
+
+# PM2 logs
+pm2-log/
+
+# Test output
+coverage/
+
+# Local test databases
+*.sqlite
+*.db
+
+# Tye-specific files
+.vs/
+
+# Optional .env files for different environments
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
