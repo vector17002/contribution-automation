@@ -45,7 +45,7 @@ async function getSha(url) {
 }
 
 export async function setApplicationRunning(){
-    console.log('Running')
+    // console.log('Running')
 }
 
 // Schedule the job to run daily
