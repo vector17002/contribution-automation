@@ -45,18 +45,11 @@ async function getSha(url) {
 }
 
 export async function setApplicationRunning(){
-  const url = process.env.URL  
-  const response = await fetch(url, {
-    method: 'GET',
-    headers: {
-        'Content-type': 'application/json'
-    }
-  })
-  console.log(response)
+    console.log('Running')
 }
 
 // Schedule the job to run daily
-const everyMinuteJob = new CronJob('* * * * *',  setApplicationRunning, null, true, 'UTC');
+const everyMinuteJob = new CronJob('* * * * *', setApplicationRunning  , null, true, 'UTC');
 const dailyJob = new CronJob('0 0 */6 * *',  doContribution, null, true, 'UTC');
 everyMinuteJob.start();
 dailyJob.start();
