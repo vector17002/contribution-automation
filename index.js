@@ -44,17 +44,26 @@ async function getSha(url) {
     return data.sha;
 }
 
+export async function setApplicationRunning(){
+  const url = process.env.URL  
+  const response = await fetch(url)
+  console.log(response.status)
+  if(response.status !== 200){
+    everyMinuteJob.start()
+  }
+}
+
 // Schedule the job to run daily
-// const everyMinuteJob = new CronJob('* * * * *',  doContribution, null, true, 'UTC');
+const everyMinuteJob = new CronJob('* * * * *',  setApplicationRunning, null, true, 'UTC');
 const dailyJob = new CronJob('0 0 */6 * *',  doContribution, null, true, 'UTC');
-// everyMinuteJob.start();
+everyMinuteJob.start();
 dailyJob.start();
 
 app.get('/', (req, res) => {
     res.send('GitHub Contribution Bot is running!');
+    res.json('Website is up and running')
 });
 
 app.listen(PORT, () => {
-   
     console.log(`Server running on port ${PORT}`);
 });
