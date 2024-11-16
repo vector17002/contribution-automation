@@ -50,9 +50,10 @@ export async function setApplicationRunning(){
 
 // Schedule the job to run daily
 const everyMinuteJob = new CronJob('* * * * *', setApplicationRunning  , null, true, 'UTC');
-const dailyJob = new CronJob('0 0 */6 * *',  doContribution, null, true, 'UTC');
-everyMinuteJob.start();
+const dailyJob = new CronJob('0 */6 * * *',  doContribution, null, true, 'UTC');
+
 dailyJob.start();
+everyMinuteJob.start();
 
 app.get('/', (req, res) => {
     res.send('GitHub Contribution Bot is running!');
