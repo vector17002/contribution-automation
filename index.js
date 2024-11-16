@@ -46,8 +46,13 @@ async function getSha(url) {
 
 export async function setApplicationRunning(){
   const url = process.env.URL  
-  const response = await fetch(url)
-  console.log(response.status)
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+        'Content-type': 'application/json'
+    }
+  })
+  console.log(response)
 }
 
 // Schedule the job to run daily
