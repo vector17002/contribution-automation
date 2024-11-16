@@ -56,7 +56,6 @@ dailyJob.start();
 
 app.get('/', (req, res) => {
     res.send('GitHub Contribution Bot is running!');
-    res.json('Website is up and running')
 });
 
 app.listen(PORT, () => {
