@@ -48,9 +48,6 @@ export async function setApplicationRunning(){
   const url = process.env.URL  
   const response = await fetch(url)
   console.log(response.status)
-  if(response.status !== 200){
-    everyMinuteJob.start()
-  }
 }
 
 // Schedule the job to run daily
